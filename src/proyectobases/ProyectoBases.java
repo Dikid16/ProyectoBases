@@ -17,8 +17,8 @@ public class ProyectoBases {
         // TODO code application logic here
         System.out.println("Bienvenido");
     }
-    public class Hola{
-        System.out.println("Chupen")
+    public void Hola(){
+        System.out.println("Chupen");
     }
     
 }

@@ -18,6 +18,7 @@ public class ProyectoBases {
         System.out.println("Bienvenido");
     }
     public class Hola{
+        System.out.println("Chupen")
     }
     
 }

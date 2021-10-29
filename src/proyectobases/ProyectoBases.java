@@ -17,5 +17,7 @@ public class ProyectoBases {
         // TODO code application logic here
         System.out.println("Bienvenido");
     }
+    public class Hola{
+    }
     
 }

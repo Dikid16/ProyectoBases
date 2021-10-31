@@ -20,5 +20,5 @@ public class ProyectoBases {
     public void Hola(){
         System.out.println("Chupen");
     }
-    
+   
 }

@@ -4,11 +4,45 @@
  */
 package proyectobases;
 
+import com.mysql.jdbc.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
+
+
 /**
  *
  * @author diego
  */
 public class Interfaz extends javax.swing.JFrame {
+         private static Connection con;
+     // Declaramos los datos de conexion a la bd
+    private static final String driver="com.mysql.jdbc.Driver";
+    private static final String user="root";
+    private static final String pass="12345";
+    private static final String url="jdbc:mysql://localhost:3306/world";
+    
+    public void conector() {
+        // Reseteamos a null la conexion a la bd
+        con=null;
+        try{
+            Class.forName(driver);
+            // Nos conectamos a la bd
+            con= (Connection) DriverManager.getConnection(url, user, pass);
+            // Si la conexion fue exitosa mostramos un mensaje de conexion exitosa
+            if (con!=null){
+                jLabel1.setText("Conexion establecida");
+            }
+        }
+        // Si la conexion NO fue exitosa mostramos un mensaje de error
+        catch (ClassNotFoundException | SQLException e){
+            jLabel1.setText("Error de conexion" + e);
+        }
+    }
 
     /**
      * Creates new form Interfaz
@@ -35,6 +69,11 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel1.setText("Bienvenido");
 
         jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -76,6 +115,10 @@ public class Interfaz extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    conector();        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

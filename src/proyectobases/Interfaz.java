@@ -198,7 +198,7 @@ public class Interfaz extends javax.swing.JFrame implements ActionListener
     
     @Override
     public void actionPerformed(ActionEvent accion) {
-        if(accion.getSource()==this.jButton1)
+        if(accion.getSource()==this.jButton2)
         {
            this.setVisible(false);
            InterfazCRUD inter=new InterfazCRUD(this);

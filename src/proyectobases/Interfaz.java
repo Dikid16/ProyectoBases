@@ -5,6 +5,8 @@
 package proyectobases;
 
 import com.mysql.jdbc.Connection;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,7 +20,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author diego
  */
-public class Interfaz extends javax.swing.JFrame {
+public class Interfaz extends javax.swing.JFrame implements ActionListener{
          private static Connection con;
      // Declaramos los datos de conexion a la bd
     private static final String driver="com.mysql.jdbc.Driver";
@@ -64,6 +66,7 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -80,6 +83,8 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Bienvenido");
 
+        jButton2.setText("Siguiente");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -87,14 +92,20 @@ public class Interfaz extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(138, 138, 138)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(114, 114, 114)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(135, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(138, 138, 138)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButton1)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(114, 114, 114)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 123, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton2)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,10 +116,9 @@ public class Interfaz extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addComponent(jButton1)
-                .addGap(65, 65, 65))
+                .addGap(40, 40, 40)
+                .addComponent(jButton2))
         );
-
-        jLabel2.getAccessibleContext().setAccessibleName("Bienvenido");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -171,8 +181,24 @@ public class Interfaz extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+    private void poneaEscuchar()
+    {
+        this.jButton1.addActionListener(this);
+        this.jButton2.addActionListener(this);
+    }
+    
+    @Override
+    public void actionPerformed(ActionEvent accion) {
+        if(accion.getSource()==this.jButton1)
+        {
+           this.setVisible(false);
+           InterfazCRUD inter=new InterfazCRUD(this);
+        }
+    }
 }

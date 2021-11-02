@@ -18,6 +18,10 @@ public class InterfazCRUD extends javax.swing.JFrame {
         initComponents();
     }
 
+    InterfazCRUD(Interfaz aThis, int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -130,4 +134,13 @@ public class InterfazCRUD extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+    private Interfaz ppal;
+    
+    public InterfazCRUD(Interfaz ppal) {
+        this.initComponents();
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
+        this.ppal=ppal;
+    }
 }

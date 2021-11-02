@@ -51,6 +51,8 @@ public class Interfaz extends javax.swing.JFrame implements ActionListener{
      */
     public Interfaz() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.poneaEscuchar();
     }
 
     /**

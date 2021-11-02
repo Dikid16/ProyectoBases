@@ -16,6 +16,9 @@ public class InterfazCRUD extends javax.swing.JFrame {
      */
     public InterfazCRUD() {
         initComponents();
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
+        this.ppal=ppal;
     }
 
     InterfazCRUD(Interfaz aThis, int i) {
@@ -137,10 +140,4 @@ public class InterfazCRUD extends javax.swing.JFrame {
 
     private Interfaz ppal;
     
-    public InterfazCRUD(Interfaz ppal) {
-        this.initComponents();
-        this.setVisible(true);
-        this.setLocationRelativeTo(null);
-        this.ppal=ppal;
-    }
 }

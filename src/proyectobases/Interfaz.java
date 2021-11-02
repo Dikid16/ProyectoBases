@@ -20,9 +20,10 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author diego
  */
-public class Interfaz extends javax.swing.JFrame implements ActionListener{
-         private static Connection con;
-     // Declaramos los datos de conexion a la bd
+public class Interfaz extends javax.swing.JFrame implements ActionListener
+{
+    private static Connection con;
+    // Declaramos los datos de conexion a la bd
     private static final String driver="com.mysql.jdbc.Driver";
     private static final String user="root";
     private static final String pass="12345";
@@ -50,7 +51,7 @@ public class Interfaz extends javax.swing.JFrame implements ActionListener{
      * Creates new form Interfaz
      */
     public Interfaz() {
-        initComponents();
+        this.initComponents();
         this.setLocationRelativeTo(null);
         this.poneaEscuchar();
     }

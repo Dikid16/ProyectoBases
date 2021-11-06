@@ -224,6 +224,11 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
         });
 
         jButton5.setText("Listar tabla completa");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("Tablas de la Base \"World\"");
 
@@ -245,6 +250,11 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
 
         buttonGroup1.add(jRadioButton3);
         jRadioButton3.setText("Idiomas");
+        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -449,7 +459,6 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
         // TODO add your handling code here:
         if(this.jRadioButton1.isSelected()){
-            this.jTable1.setVisible(true);
             this.jLabel4.setVisible(true);
             this.jLabel4.setText("Información de Paises");
             this.jCheckBox4.setVisible(true);
@@ -480,29 +489,6 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
             this.jCheckBox16.setText("Capital");                
             this.jCheckBox17.setVisible(true);
             this.jCheckBox17.setText("Code 2");
-
-            DefaultTableModel tabla1 = new DefaultTableModel();//pasar el codigo a el metodo buscar
-            tabla1.addColumn("Código");
-            tabla1.addColumn("Nombre");
-            tabla1.addColumn("Continente");
-            this.jTable1.setModel(tabla1);
-            String[] busqueda1 = new String[3];
-
-            try {
-                Statement st = Interfaz.con.createStatement();
-                ResultSet rs = st.executeQuery("select code, name, continent from country order by 1 limit 30");
-                while(rs.next())
-                {
-                    busqueda1[0]=rs.getString(1);
-                    busqueda1[1]=rs.getString(2);
-                    busqueda1[2]=rs.getString(3);
-                    tabla1.addRow(busqueda1);
-                }
-
-            }
-            catch (SQLException ex) {
-                Logger.getLogger(InterfazCRUD.class.getName()).log(Level.SEVERE, null, ex);
-            }
         }
         else{
         this.jTable1.setVisible(false);
@@ -527,7 +513,6 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
         // TODO add your handling code here:
         if(this.jRadioButton2.isSelected()){
-                this.jTable2.setVisible(true);
                 this.jLabel4.setVisible(true);
                 this.jLabel4.setText("Información Ciudades");
                 this.jCheckBox4.setVisible(true);
@@ -548,29 +533,7 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
                 this.jCheckBox14.setVisible(false);
                 this.jCheckBox15.setVisible(false);
                 this.jCheckBox16.setVisible(false);
-                this.jCheckBox17.setVisible(false);
-                DefaultTableModel tabla1 = new DefaultTableModel();//pasar el codigo a el metodo buscar
-                tabla1.addColumn("Id");
-                tabla1.addColumn("Nombre");
-                tabla1.addColumn("Distrito");
-                this.jTable2.setModel(tabla1);
-                String[] busqueda1 = new String[3];
-
-                try {
-                    Statement st = Interfaz.con.createStatement();
-                    ResultSet rs = st.executeQuery("select id, name, district from city order by 1 limit 10");
-                    while(rs.next())
-                    {
-                        busqueda1[0]=rs.getString(1);
-                        busqueda1[1]=rs.getString(2);
-                        busqueda1[2]=rs.getString(3);
-                        tabla1.addRow(busqueda1);
-                    }
-
-                }
-                catch (SQLException ex) {
-                    Logger.getLogger(InterfazCRUD.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                this.jCheckBox17.setVisible(false);                
             }
             else{
             this.jTable2.setVisible(false);
@@ -591,6 +554,55 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
             this.jCheckBox17.setVisible(false);
             }
     }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
+        // TODO add your handling code here:
+        if(this.jRadioButton3.isSelected()){
+                this.jLabel4.setVisible(true);
+                this.jLabel4.setText("Información Idiomas");
+                this.jCheckBox4.setVisible(true);
+                this.jCheckBox4.setText("Código de País");
+                this.jCheckBox5.setVisible(true);
+                this.jCheckBox5.setText("Idioma");
+                this.jCheckBox6.setVisible(true);
+                this.jCheckBox6.setText("¿Es Oficial?");
+                this.jCheckBox7.setVisible(true);
+                this.jCheckBox7.setText("Porcentaje Idioma Hablado");
+                this.jCheckBox8.setVisible(false);
+                this.jCheckBox9.setVisible(false);
+                this.jCheckBox10.setVisible(false);
+                this.jCheckBox11.setVisible(false);
+                this.jCheckBox12.setVisible(false);
+                this.jCheckBox13.setVisible(false);
+                this.jCheckBox14.setVisible(false);
+                this.jCheckBox15.setVisible(false);
+                this.jCheckBox16.setVisible(false);
+                this.jCheckBox17.setVisible(false);
+            }
+            else{
+            this.jTable3.setVisible(false);
+            this.jLabel4.setVisible(false);
+            this.jCheckBox4.setVisible(false);
+            this.jCheckBox5.setVisible(false);
+            this.jCheckBox6.setVisible(false);
+            this.jCheckBox7.setVisible(false);
+            this.jCheckBox8.setVisible(false);
+            this.jCheckBox9.setVisible(false);
+            this.jCheckBox10.setVisible(false);
+            this.jCheckBox11.setVisible(false);
+            this.jCheckBox12.setVisible(false);
+            this.jCheckBox13.setVisible(false);
+            this.jCheckBox14.setVisible(false);
+            this.jCheckBox15.setVisible(false);
+            this.jCheckBox16.setVisible(false);
+            this.jCheckBox17.setVisible(false);
+            }
+    }//GEN-LAST:event_jRadioButton3ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        this.enlistar();
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -669,6 +681,98 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
         this.jRadioButton1.addActionListener(this);
         this.jRadioButton2.addActionListener(this);
         this.jRadioButton3.addActionListener(this);
+    }
+    private void enlistar(){
+        if(this.jRadioButton1.isSelected()){
+            this.jTable1.setVisible(true);
+            DefaultTableModel tabla1 = new DefaultTableModel();//pasar el codigo a el metodo buscar
+            tabla1.addColumn("Código");
+            tabla1.addColumn("Nombre");
+            tabla1.addColumn("Continente");
+            tabla1.addColumn("Región");
+            tabla1.addColumn("Superficie");
+            tabla1.addColumn("Año de Independencia");
+            tabla1.addColumn("Población");
+            tabla1.addColumn("Esperanza de Vida");
+            tabla1.addColumn("GNP");
+            tabla1.addColumn("GNPOld");
+            tabla1.addColumn("Nombre Local");
+            tabla1.addColumn("Tipo de Gobierno");
+            tabla1.addColumn("Cabeza de Estado");
+            tabla1.addColumn("Capital");
+            tabla1.addColumn("Código 2");
+            this.jTable1.setModel(tabla1);
+            String[] busqueda1 = new String[15];
+
+            try {
+                Statement st = Interfaz.con.createStatement();
+                ResultSet rs = st.executeQuery("select * from country order by 1");
+                while(rs.next())
+                {
+                    for(int i=0;i<15;i++){
+                        busqueda1[i]=rs.getString(i+1);
+                    }
+                    tabla1.addRow(busqueda1);
+                }
+
+            }
+            catch (SQLException ex) {
+                Logger.getLogger(InterfazCRUD.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        if(this.jRadioButton2.isSelected()){
+            this.jTable2.setVisible(true);
+            DefaultTableModel tabla1 = new DefaultTableModel();//pasar el codigo a el metodo buscar
+            tabla1.addColumn("Id");
+            tabla1.addColumn("Nombre");
+            tabla1.addColumn("Código de País");
+            tabla1.addColumn("Distrito");
+            tabla1.addColumn("Población");
+            this.jTable2.setModel(tabla1);
+            String[] busqueda1 = new String[5];
+
+            try {
+                Statement st = Interfaz.con.createStatement();
+                ResultSet rs = st.executeQuery("select * from city order by 1");
+                while(rs.next())
+                {
+                    for(int i=0;i<5;i++){
+                        busqueda1[i]=rs.getString(i+1);
+                    }
+                    tabla1.addRow(busqueda1);                    
+                }
+
+            }
+            catch (SQLException ex) {
+                Logger.getLogger(InterfazCRUD.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        if(this.jRadioButton3.isSelected()){
+            this.jTable3.setVisible(true);
+            DefaultTableModel tabla1 = new DefaultTableModel();//pasar el codigo a el metodo buscar
+            tabla1.addColumn("Código de País");
+            tabla1.addColumn("Idioma");
+            tabla1.addColumn("¿Es Oficial?");
+            tabla1.addColumn("Porcentaje");
+            this.jTable3.setModel(tabla1);
+            String[] busqueda1 = new String[4];
+
+            try {
+                Statement st = Interfaz.con.createStatement();
+                ResultSet rs = st.executeQuery("select * from countrylanguage order by 1");
+                while(rs.next())
+                {
+                    for(int i=0;i<4;i++){
+                        busqueda1[i]=rs.getString(i+1);
+                    }
+                    tabla1.addRow(busqueda1);                    
+                }
+
+            }
+            catch (SQLException ex) {
+                Logger.getLogger(InterfazCRUD.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
 
     @Override

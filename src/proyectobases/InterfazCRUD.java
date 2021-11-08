@@ -62,10 +62,6 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
         jRadioButton3 = new javax.swing.JRadioButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
         jCheckBox1 = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -262,19 +258,6 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
             }
         });
 
-        jTextField1.setText("P1");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-
-        jTextField2.setText("P2");
-
-        jTextField3.setText("P3");
-
-        jTextField4.setText("P4");
-
         jCheckBox1.setText("Esperanza de Vida");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -328,17 +311,10 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
                         .addGap(234, 234, 234))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(50, 50, 50)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(70, 70, 70)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jTextField1)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(70, 70, 70)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(70, 70, 70)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(70, 70, 70)
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))))
@@ -360,14 +336,6 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(78, 78, 78)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -494,7 +462,12 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        this.buscarPais();
+        if(this.jRadioButton1.isSelected())
+            this.buscarPais();
+        if(this.jRadioButton2.isSelected())
+            this.buscarCiudad();
+        if(this.jRadioButton3.isSelected())
+            this.buscarIdioma();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
@@ -570,6 +543,7 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
                 this.jCheckBox8.setText("Población");
                 this.jCheckBox9.setVisible(false);
                 this.jCheckBox10.setVisible(false);
+                this.jCheckBox1.setVisible(false);
                 this.jCheckBox11.setVisible(false);
                 this.jCheckBox12.setVisible(false);
                 this.jCheckBox13.setVisible(false);
@@ -588,6 +562,7 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
             this.jCheckBox8.setVisible(false);
             this.jCheckBox9.setVisible(false);
             this.jCheckBox10.setVisible(false);
+            this.jCheckBox1.setVisible(false);
             this.jCheckBox11.setVisible(false);
             this.jCheckBox12.setVisible(false);
             this.jCheckBox13.setVisible(false);
@@ -614,6 +589,7 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
                 this.jCheckBox8.setVisible(false);
                 this.jCheckBox9.setVisible(false);
                 this.jCheckBox10.setVisible(false);
+                this.jCheckBox1.setVisible(false);
                 this.jCheckBox11.setVisible(false);
                 this.jCheckBox12.setVisible(false);
                 this.jCheckBox13.setVisible(false);
@@ -632,6 +608,7 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
             this.jCheckBox8.setVisible(false);
             this.jCheckBox9.setVisible(false);
             this.jCheckBox10.setVisible(false);
+            this.jCheckBox1.setVisible(false);
             this.jCheckBox11.setVisible(false);
             this.jCheckBox12.setVisible(false);
             this.jCheckBox13.setVisible(false);
@@ -646,10 +623,6 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
         // TODO add your handling code here:
         this.enlistar();
     }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -693,10 +666,6 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 
     private Interfaz ppal;
@@ -720,6 +689,7 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
         this.jCheckBox8.setVisible(false);
         this.jCheckBox9.setVisible(false);
         this.jCheckBox10.setVisible(false);
+        this.jCheckBox1.setVisible(false);
         this.jCheckBox11.setVisible(false);
         this.jCheckBox12.setVisible(false);
         this.jCheckBox13.setVisible(false);
@@ -831,17 +801,10 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
     }
 
     private void buscarPais(){
-        String pais,p1="",p2="",p3,opc="";
+        String pais,p1="",p2="country",p3,opc="";
         int cont=0;
         
         pais=JOptionPane.showInputDialog("Ingrese el nombre del país \n Ingrese 1 si quiere ver todos los paises con las características seleccionadas");
-        
-        if(this.jRadioButton1.isSelected())
-            p2="country";
-        if(this.jRadioButton2.isSelected())
-            p2="city";
-        if(this.jRadioButton3.isSelected())
-            p2="countrylanguage";
         
         this.jTable1.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         DefaultTableModel tabla1 = new DefaultTableModel();//pasar el codigo a el metodo buscar
@@ -998,12 +961,164 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
             p3="name='"+pais+"'";
             opc="select "+p1+" from "+p2+" where "+p3+";";
         }
-        
-         
-        System.out.print(opc);
-        System.out.print(cont);
-        
+                
         this.jTable1.setModel(tabla1);
+        String[] busqueda1 = new String[cont];
+
+        try {
+            Statement st = Interfaz.con.createStatement();
+            ResultSet rs = st.executeQuery(opc);
+            while(rs.next())
+            {
+                for(int i=0;i<cont;i++){
+                    busqueda1[i]=rs.getString(i+1);
+                }
+                tabla1.addRow(busqueda1);
+            }
+
+        }
+        catch (SQLException ex) {
+            Logger.getLogger(InterfazCRUD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    private void buscarCiudad(){
+        String pais,p1="",p2="city",p3,opc="";
+        int cont=0;
+        
+        pais=JOptionPane.showInputDialog("Ingrese el nombre de la ciudad \n Ingrese 1 si quiere ver todas las ciudades con las características seleccionadas");
+       
+        this.jTable2.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        DefaultTableModel tabla1 = new DefaultTableModel();//pasar el codigo a el metodo buscar
+        
+        if(this.jCheckBox4.isSelected() && cont==0){
+            p1=p1+"id";
+            tabla1.addColumn("Id");
+            cont++;
+        }
+        if(this.jCheckBox5.isSelected() && cont==0){
+            p1=p1+"name";
+            tabla1.addColumn("Nombre");
+            cont++;
+        }
+        if(this.jCheckBox5.isSelected() && cont!=0){
+            p1=p1+",name";
+            tabla1.addColumn("Nombre");
+            cont++;
+        }
+        if(this.jCheckBox6.isSelected() && cont==0){
+            p1=p1+"countrycode";
+            tabla1.addColumn("Código de País");
+            cont++;
+        }
+        if(this.jCheckBox6.isSelected() && cont!=0){
+            p1=p1+",countrycode";
+            tabla1.addColumn("Código de País");
+            cont++;
+        }
+        if(this.jCheckBox7.isSelected() && cont==0){
+            p1=p1+"district";
+            tabla1.addColumn("Distrito");
+            cont++;
+        }
+        if(this.jCheckBox7.isSelected() && cont!=0){
+            p1=p1+",district";
+            tabla1.addColumn("Distrito");
+            cont++;
+        }
+        if(this.jCheckBox8.isSelected() && cont==0){
+            p1=p1+"population";
+            tabla1.addColumn("Población");
+            cont++;
+        }
+        if(this.jCheckBox8.isSelected() && cont!=0){
+            p1=p1+",population";
+            tabla1.addColumn("Población");
+            cont++;
+        }
+                      
+        if(pais.equals("1"))       
+             opc="select "+p1+" from "+p2+";";
+        else{
+            p3="name='"+pais+"'";
+            opc="select "+p1+" from "+p2+" where "+p3+";";
+        }
+        
+        System.out.println(opc);
+        
+        this.jTable2.setModel(tabla1);
+        String[] busqueda1 = new String[cont];
+
+        try {
+            Statement st = Interfaz.con.createStatement();
+            ResultSet rs = st.executeQuery(opc);
+            while(rs.next())
+            {
+                for(int i=0;i<cont;i++){
+                    busqueda1[i]=rs.getString(i+1);
+                }
+                tabla1.addRow(busqueda1);
+            }
+
+        }
+        catch (SQLException ex) {
+            Logger.getLogger(InterfazCRUD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    private void buscarIdioma(){
+        String pais,p1="",p2="countrylanguage",p3,opc="";
+        int cont=0;
+        
+        pais=JOptionPane.showInputDialog("Ingrese el nombre del idioma \n Ingrese 1 si quiere ver todos los idiomas con las características seleccionadas");
+        
+        this.jTable3.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        DefaultTableModel tabla1 = new DefaultTableModel();//pasar el codigo a el metodo buscar
+        
+        if(this.jCheckBox4.isSelected() && cont==0){
+            p1=p1+"countrycode";
+            tabla1.addColumn("Código de País");
+            cont++;
+        }
+        if(this.jCheckBox5.isSelected() && cont==0){
+            p1=p1+"language";
+            tabla1.addColumn("Idioma");
+            cont++;
+        }
+        if(this.jCheckBox5.isSelected() && cont!=0){
+            p1=p1+",language";
+            tabla1.addColumn("Idioma");
+            cont++;
+        }
+        if(this.jCheckBox6.isSelected() && cont==0){
+            p1=p1+"isofficial";
+            tabla1.addColumn("¿Es Oficial?");
+            cont++;
+        }
+        if(this.jCheckBox6.isSelected() && cont!=0){
+            p1=p1+",isofficial";
+            tabla1.addColumn("¿Es Oficial?");
+            cont++;
+        }
+        if(this.jCheckBox7.isSelected() && cont==0){
+            p1=p1+"percentage";
+            tabla1.addColumn("Porcentaje");
+            cont++;
+        }
+        if(this.jCheckBox7.isSelected() && cont!=0){
+            p1=p1+",percentage";
+            tabla1.addColumn("Porcentaje");
+            cont++;
+        }
+                              
+        if(pais.equals("1"))       
+             opc="select "+p1+" from "+p2+";";
+        else{
+            p3="language='"+pais+"'";
+            opc="select "+p1+" from "+p2+" where "+p3+";";
+        }
+        
+        this.jTable3.setModel(tabla1);
         String[] busqueda1 = new String[cont];
 
         try {

@@ -26,7 +26,7 @@ public class Interfaz extends javax.swing.JFrame implements ActionListener
     // Declaramos los datos de conexion a la bd
     private static final String driver="com.mysql.jdbc.Driver";
     private static final String user="root";
-    private static final String pass="12345";
+    private static final String pass="Perl1t@5";
     private static final String url="jdbc:mysql://localhost:3306/world";
     
     public void conector() {

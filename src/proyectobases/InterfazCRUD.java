@@ -68,6 +68,11 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
         setExtendedState(6);
 
         jButton1.setText("Crear");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Buscar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -77,8 +82,18 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
         });
 
         jButton3.setText("Modificar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Eliminar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Paises");
 
@@ -624,6 +639,36 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
         this.enlistar();
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        if(this.jRadioButton1.isSelected())
+            this.crearPais();
+        if(this.jRadioButton2.isSelected())
+            this.crearCiudad();
+        if(this.jRadioButton3.isSelected())
+            this.crearIdioma();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        if(this.jRadioButton1.isSelected())
+            this.modificarPais();
+        if(this.jRadioButton2.isSelected())
+            this.modificarCiudad();
+        if(this.jRadioButton3.isSelected())
+            this.modificarIdioma();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        if(this.jRadioButton1.isSelected())
+            this.eliminarPais();
+        if(this.jRadioButton2.isSelected())
+            this.eliminarCiudad();
+        if(this.jRadioButton3.isSelected())
+            this.eliminarIdioma();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -672,6 +717,7 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
     
     /**
      * Creates new form InterfazCRUD
+     * @param ppal
      */
     public InterfazCRUD(Interfaz ppal) {
         initComponents();
@@ -801,8 +847,9 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
     }
 
     private void buscarPais(){
-        String pais,p1="",p2="country",p3,opc="";
+        String pais,p1="",p3,opc="";
         int cont=0;
+        boolean yaesta=false;
         
         pais=JOptionPane.showInputDialog("Ingrese el nombre del país \n Ingrese 1 si quiere ver todos los paises con las características seleccionadas");
         
@@ -818,148 +865,172 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
             p1=p1+"name";
             tabla1.addColumn("Nombre");
             cont++;
+            yaesta=true;
         }
-        if(this.jCheckBox5.isSelected() && cont!=0){
+        if(this.jCheckBox5.isSelected() && cont!=0 && yaesta==false){
             p1=p1+",name";
             tabla1.addColumn("Nombre");
             cont++;
         }
+        yaesta=false;
         if(this.jCheckBox6.isSelected() && cont==0){
             p1=p1+"region";
             tabla1.addColumn("Región");
             cont++;
+            yaesta=true;
         }
-        if(this.jCheckBox6.isSelected() && cont!=0){
+        if(this.jCheckBox6.isSelected() && cont!=0 && yaesta==false){
             p1=p1+",region";
             tabla1.addColumn("Región");
             cont++;
         }
+        yaesta=false;
         if(this.jCheckBox7.isSelected() && cont==0){
             p1=p1+"continent";
             tabla1.addColumn("Continente");
-            cont++;
+            cont++;yaesta=true;
         }
-        if(this.jCheckBox7.isSelected() && cont!=0){
+        if(this.jCheckBox7.isSelected() && cont!=0 && yaesta==false){
             p1=p1+",continent";
             tabla1.addColumn("Continente");
             cont++;
         }
+        yaesta=false;
         if(this.jCheckBox8.isSelected() && cont==0){
             p1=p1+"surfacearea";
             tabla1.addColumn("Superficie");
-            cont++;
+            cont++;yaesta=true;
         }
-        if(this.jCheckBox8.isSelected() && cont!=0){
+        if(this.jCheckBox8.isSelected() && cont!=0 && yaesta==false){
             p1=p1+",surfacearea";
             tabla1.addColumn("Superficie");
             cont++;
         }
+        yaesta=false;
         if(this.jCheckBox9.isSelected() && cont==0){
             p1=p1+"indepyear";
             tabla1.addColumn("Año de Independencia");
-            cont++;
+            cont++;yaesta=true;
         }
-        if(this.jCheckBox9.isSelected() && cont!=0){
+        if(this.jCheckBox9.isSelected() && cont!=0 && yaesta==false){
             p1=p1+",indepyear";
             tabla1.addColumn("Año de Independencia");
             cont++;
         }
+        yaesta=false;
         if(this.jCheckBox10.isSelected() && cont==0){
             p1=p1+"population";
             tabla1.addColumn("Población");
             cont++;
+            yaesta=true;
         }
-        if(this.jCheckBox10.isSelected() && cont!=0){
+        if(this.jCheckBox10.isSelected() && cont!=0 && yaesta==false){
             p1=p1+",population";
             tabla1.addColumn("Población");
             cont++;
         }
+        yaesta=false;
         if(this.jCheckBox1.isSelected() && cont==0){
             p1=p1+"lifeexpectancy";
             tabla1.addColumn("Esperanza de Vida");
             cont++;
+            yaesta=true;
         }
-        if(this.jCheckBox1.isSelected() && cont!=0){
+        if(this.jCheckBox1.isSelected() && cont!=0 && yaesta==false){
             p1=p1+",lifeexpectancy";
             tabla1.addColumn("Esperanza de Vida");
             cont++;
         }
+        yaesta=false;
         if(this.jCheckBox11.isSelected() && cont==0){
             p1=p1+"gnp";
             tabla1.addColumn("GNP");
             cont++;
+            yaesta=true;
         }
-        if(this.jCheckBox11.isSelected() && cont!=0){
+        if(this.jCheckBox11.isSelected() && cont!=0 && yaesta==false){
             p1=p1+",gnp";
             tabla1.addColumn("GNP");
             cont++;
         }
+        yaesta=false;
         if(this.jCheckBox12.isSelected() && cont==0){
             p1=p1+"gnpold";
             tabla1.addColumn("GNPOld");
             cont++;
+            yaesta=true;
         }
-        if(this.jCheckBox12.isSelected() && cont!=0){
+        if(this.jCheckBox12.isSelected() && cont!=0 && yaesta==false){
             p1=p1+",gnpold";
             tabla1.addColumn("GNPOld");
             cont++;
         }
+        yaesta=false;
         if(this.jCheckBox13.isSelected() && cont==0){
             p1=p1+"localname";
             tabla1.addColumn("Nombre Local");
             cont++;
+            yaesta=true;
         }
-        if(this.jCheckBox13.isSelected() && cont!=0){
+        if(this.jCheckBox13.isSelected() && cont!=0 && yaesta==false){
             p1=p1+",localname";
             tabla1.addColumn("Nombre Local");
             cont++;
         }
+        yaesta=false;
         if(this.jCheckBox14.isSelected() && cont==0){
             p1=p1+"governmentform";
             tabla1.addColumn("Tipo de Gobierno");
             cont++;
+            yaesta=true;
         }
-        if(this.jCheckBox14.isSelected() && cont!=0){
+        if(this.jCheckBox14.isSelected() && cont!=0 && yaesta==false){
             p1=p1+",governmentform";
             tabla1.addColumn("Tipo de Gobierno");
             cont++;
         }
+        yaesta=false;
         if(this.jCheckBox15.isSelected() && cont==0){
             p1=p1+"headofstate";
             tabla1.addColumn("Cabeza de Estado");
             cont++;
+            yaesta=true;
         }
-        if(this.jCheckBox15.isSelected() && cont!=0){
+        if(this.jCheckBox15.isSelected() && cont!=0 && yaesta==false){
             p1=p1+",headofstate";
             tabla1.addColumn("Cabeza de Estado");
             cont++;
         }
+        yaesta=false;
         if(this.jCheckBox16.isSelected() && cont==0){
             p1=p1+"capital";
             tabla1.addColumn("Capital");
             cont++;
+            yaesta=true;
         }
-        if(this.jCheckBox16.isSelected() && cont!=0){
+        if(this.jCheckBox16.isSelected() && cont!=0 && yaesta==false){
             p1=p1+",capital";
             tabla1.addColumn("Capital");
             cont++;
         }
+        yaesta=false;
         if(this.jCheckBox17.isSelected() && cont==0){
             p1=p1+"code2";
             tabla1.addColumn("Código 2");
             cont++;
+            yaesta=true;
         }
-        if(this.jCheckBox17.isSelected() && cont!=0){
+        if(this.jCheckBox17.isSelected() && cont!=0 && yaesta==false){
             p1=p1+",code2";
             tabla1.addColumn("Código 2");
             cont++;
         }     
                
         if(pais.equals("1"))       
-             opc="select "+p1+" from "+p2+";";
+             opc="select "+p1+" from country;";
         else{
             p3="name='"+pais+"'";
-            opc="select "+p1+" from "+p2+" where "+p3+";";
+            opc="select "+p1+" from country where "+p3+";";
         }
                 
         this.jTable1.setModel(tabla1);
@@ -983,8 +1054,9 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
     }
     
     private void buscarCiudad(){
-        String pais,p1="",p2="city",p3,opc="";
+        String pais,p1="",p3,opc="";
         int cont=0;
+        boolean yaesta=false;
         
         pais=JOptionPane.showInputDialog("Ingrese el nombre de la ciudad \n Ingrese 1 si quiere ver todas las ciudades con las características seleccionadas");
        
@@ -1000,48 +1072,55 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
             p1=p1+"name";
             tabla1.addColumn("Nombre");
             cont++;
+            yaesta=true;
         }
-        if(this.jCheckBox5.isSelected() && cont!=0){
+        if(this.jCheckBox5.isSelected() && cont!=0 && yaesta==false){
             p1=p1+",name";
             tabla1.addColumn("Nombre");
             cont++;
         }
+        yaesta=false;
         if(this.jCheckBox6.isSelected() && cont==0){
             p1=p1+"countrycode";
             tabla1.addColumn("Código de País");
             cont++;
+            yaesta=true;
         }
-        if(this.jCheckBox6.isSelected() && cont!=0){
+        if(this.jCheckBox6.isSelected() && cont!=0 && yaesta==false){
             p1=p1+",countrycode";
             tabla1.addColumn("Código de País");
             cont++;
         }
+        yaesta=false;
         if(this.jCheckBox7.isSelected() && cont==0){
             p1=p1+"district";
             tabla1.addColumn("Distrito");
             cont++;
+            yaesta=true;
         }
-        if(this.jCheckBox7.isSelected() && cont!=0){
+        if(this.jCheckBox7.isSelected() && cont!=0 && yaesta==false){
             p1=p1+",district";
             tabla1.addColumn("Distrito");
             cont++;
         }
+        yaesta=false;
         if(this.jCheckBox8.isSelected() && cont==0){
             p1=p1+"population";
             tabla1.addColumn("Población");
             cont++;
+            yaesta=true;
         }
-        if(this.jCheckBox8.isSelected() && cont!=0){
+        if(this.jCheckBox8.isSelected() && cont!=0 && yaesta==false){
             p1=p1+",population";
             tabla1.addColumn("Población");
             cont++;
         }
                       
         if(pais.equals("1"))       
-             opc="select "+p1+" from "+p2+";";
+             opc="select "+p1+" from city;";
         else{
             p3="name='"+pais+"'";
-            opc="select "+p1+" from "+p2+" where "+p3+";";
+            opc="select "+p1+" from city where "+p3+";";
         }
         
         System.out.println(opc);
@@ -1067,8 +1146,9 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
     }
     
     private void buscarIdioma(){
-        String pais,p1="",p2="countrylanguage",p3,opc="";
+        String pais,p1="",p3,opc="";
         int cont=0;
+        boolean yaesta=false;
         
         pais=JOptionPane.showInputDialog("Ingrese el nombre del idioma \n Ingrese 1 si quiere ver todos los idiomas con las características seleccionadas");
         
@@ -1084,38 +1164,43 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
             p1=p1+"language";
             tabla1.addColumn("Idioma");
             cont++;
+            yaesta=true;
         }
-        if(this.jCheckBox5.isSelected() && cont!=0){
+        if(this.jCheckBox5.isSelected() && cont!=0 && yaesta==false){
             p1=p1+",language";
             tabla1.addColumn("Idioma");
             cont++;
         }
+        yaesta=false;
         if(this.jCheckBox6.isSelected() && cont==0){
             p1=p1+"isofficial";
             tabla1.addColumn("¿Es Oficial?");
             cont++;
+            yaesta=true;
         }
-        if(this.jCheckBox6.isSelected() && cont!=0){
+        if(this.jCheckBox6.isSelected() && cont!=0 && yaesta==false){
             p1=p1+",isofficial";
             tabla1.addColumn("¿Es Oficial?");
             cont++;
         }
+        yaesta=false;
         if(this.jCheckBox7.isSelected() && cont==0){
             p1=p1+"percentage";
             tabla1.addColumn("Porcentaje");
             cont++;
+            yaesta=true;
         }
-        if(this.jCheckBox7.isSelected() && cont!=0){
+        if(this.jCheckBox7.isSelected() && cont!=0 && yaesta==false){
             p1=p1+",percentage";
             tabla1.addColumn("Porcentaje");
             cont++;
         }
-                              
+        
         if(pais.equals("1"))       
-             opc="select "+p1+" from "+p2+";";
+             opc="select "+p1+" from countrylanguage;";
         else{
             p3="language='"+pais+"'";
-            opc="select "+p1+" from "+p2+" where "+p3+";";
+            opc="select "+p1+" from countrylanguage where "+p3+";";
         }
         
         this.jTable3.setModel(tabla1);
@@ -1131,6 +1216,472 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
                 }
                 tabla1.addRow(busqueda1);
             }
+
+        }
+        catch (SQLException ex) {
+            Logger.getLogger(InterfazCRUD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+            
+    private void modificarPais(){
+        String pais,cod,nom,conti,reg,sup,indep,pobla,esp,gnp,gnpo,nomloc,gob,cabe,cap,cod2,p1="",p3,opc="";
+        int cont=0;
+        boolean yaesta=false;
+        
+        pais=JOptionPane.showInputDialog("Ingrese el nombre del país a modificar");
+        
+        if(this.jCheckBox4.isSelected() && cont==0){
+            cod=JOptionPane.showInputDialog("Ingrese el nuevo código del país");
+            p1=p1+"code='"+cod+"'";
+            cont++;
+        }
+        if(this.jCheckBox5.isSelected() && cont==0){
+            nom=JOptionPane.showInputDialog("Ingrese el nuevo nombre del país");
+            p1=p1+"name='"+nom+"'";
+            cont++;
+            yaesta=true;
+        }
+        if(this.jCheckBox5.isSelected() && cont!=0 && yaesta==false){
+            nom=JOptionPane.showInputDialog("Ingrese el nuevo nombre del país");
+            p1=p1+",name='"+nom+"'";
+            cont++;
+        }
+        yaesta=false;
+        if(this.jCheckBox6.isSelected() && cont==0){
+            reg=JOptionPane.showInputDialog("Ingrese la nueva región del país");
+            p1=p1+"region='"+reg+"'";
+            cont++;
+            yaesta=true;
+        }
+        if(this.jCheckBox6.isSelected() && cont!=0 && yaesta==false){
+            reg=JOptionPane.showInputDialog("Ingrese la nueva región del país");
+            p1=p1+",region='"+reg+"'";
+            cont++;
+        }
+        yaesta=false;
+        if(this.jCheckBox7.isSelected() && cont==0){
+            conti=JOptionPane.showInputDialog("Ingrese el nuevo continente del país");
+            p1=p1+"continent='"+conti+"'";
+            cont++;
+            yaesta=true;
+        }
+        if(this.jCheckBox7.isSelected() && cont!=0 && yaesta==false){
+            conti=JOptionPane.showInputDialog("Ingrese el nuevo continente del país");
+            p1=p1+",continent='"+conti+"'";
+            cont++;
+        }
+        yaesta=false;
+        if(this.jCheckBox8.isSelected() && cont==0){
+            sup=JOptionPane.showInputDialog("Ingrese la nueva superficie del país");
+            p1=p1+"surfacearea='"+sup+"'";
+            cont++;
+            yaesta=true;
+        }
+        if(this.jCheckBox8.isSelected() && cont!=0 && yaesta==false){
+            sup=JOptionPane.showInputDialog("Ingrese la nueva superficie del país");
+            p1=p1+",surfacearea='"+sup+"'";
+            cont++;
+        }
+        yaesta=false;
+        if(this.jCheckBox9.isSelected() && cont==0){
+            indep=JOptionPane.showInputDialog("Ingrese el nuevo año de independencia del país");
+            p1=p1+"indepyear='"+indep+"'";
+            cont++;
+            yaesta=true;
+        }
+        if(this.jCheckBox9.isSelected() && cont!=0 && yaesta==false){
+            indep=JOptionPane.showInputDialog("Ingrese el nuevo año de independencia del país");
+            p1=p1+",indepyear='"+indep+"'";
+            cont++;
+        }
+        yaesta=false;
+        if(this.jCheckBox10.isSelected() && cont==0){
+            pobla=JOptionPane.showInputDialog("Ingrese la nueva población del país");
+            p1=p1+"population='"+pobla+"'";
+            cont++;
+            yaesta=true;
+        }
+        if(this.jCheckBox10.isSelected() && cont!=0 && yaesta==false){
+            pobla=JOptionPane.showInputDialog("Ingrese la nueva población del país");
+            p1=p1+",population='"+pobla+"'";
+            cont++;
+        }
+        yaesta=false;
+        if(this.jCheckBox1.isSelected() && cont==0){
+            esp=JOptionPane.showInputDialog("Ingrese la nueva esperanza de vida del país");
+            p1=p1+"lifeexpectancy='"+esp+"'";
+            cont++;
+            yaesta=true;
+        }
+        if(this.jCheckBox1.isSelected() && cont!=0 && yaesta==false){
+            esp=JOptionPane.showInputDialog("Ingrese la nueva esperanza de vida del país");
+            p1=p1+",lifeexpectancy='"+esp+"'";
+            cont++;
+        }
+        yaesta=false;
+        if(this.jCheckBox11.isSelected() && cont==0){
+            gnp=JOptionPane.showInputDialog("Ingrese el nuevo GNP del país");
+            p1=p1+"gnp='"+gnp+"'";
+            cont++;
+            yaesta=true;
+        }
+        if(this.jCheckBox11.isSelected() && cont!=0 && yaesta==false){
+            gnp=JOptionPane.showInputDialog("Ingrese el nuevo GNP del país");
+            p1=p1+",gnp='"+gnp+"'";
+            cont++;
+        }
+        yaesta=false;
+        if(this.jCheckBox12.isSelected() && cont==0){
+            gnpo=JOptionPane.showInputDialog("Ingrese el nuevo GNPOld del país");
+            p1=p1+"gnpold='"+gnpo+"'";
+            cont++;
+            yaesta=true;
+        }
+        if(this.jCheckBox12.isSelected() && cont!=0 && yaesta==false){
+            gnpo=JOptionPane.showInputDialog("Ingrese el nuevo GNPOld del país");
+            p1=p1+",gnpold='"+gnpo+"'";
+            cont++;
+        }
+        yaesta=false;
+        if(this.jCheckBox13.isSelected() && cont==0){
+            nomloc=JOptionPane.showInputDialog("Ingrese el nuevo nombre local del país");
+            p1=p1+"localname='"+nomloc+"'";
+            cont++;
+            yaesta=true;
+        }
+        if(this.jCheckBox13.isSelected() && cont!=0 && yaesta==false){
+            nomloc=JOptionPane.showInputDialog("Ingrese el nuevo nombre local del país");
+            p1=p1+",localname='"+nomloc+"'";
+            cont++;
+        }
+        yaesta=false;
+        if(this.jCheckBox14.isSelected() && cont==0){
+            gob=JOptionPane.showInputDialog("Ingrese el nuevo tipo de gobierno del país");
+            p1=p1+"governmentform='"+gob+"'";
+            cont++;
+            yaesta=true;
+        }
+        if(this.jCheckBox14.isSelected() && cont!=0 && yaesta==false){
+            gob=JOptionPane.showInputDialog("Ingrese el nuevo tipo de gobierno del país");
+            p1=p1+",governmentform='"+gob+"'";
+            cont++;
+        }
+        yaesta=false;
+        if(this.jCheckBox15.isSelected() && cont==0){
+            cabe=JOptionPane.showInputDialog("Ingrese la nueva cabeza de estado del país");
+            p1=p1+"headofstate='"+cabe+"'";
+            cont++;
+            yaesta=true;
+        }
+        if(this.jCheckBox15.isSelected() && cont!=0 && yaesta==false){
+            cabe=JOptionPane.showInputDialog("Ingrese la nueva cabeza de estado del país");
+            p1=p1+",headofstate='"+cabe+"'";
+            cont++;
+        }
+        yaesta=false;
+        if(this.jCheckBox16.isSelected() && cont==0){
+            cap=JOptionPane.showInputDialog("Ingrese la nueva capital del país");
+            p1=p1+"capital='"+cap+"'";
+            cont++;
+            yaesta=true;
+        }
+        if(this.jCheckBox16.isSelected() && cont!=0 && yaesta==false){
+            cap=JOptionPane.showInputDialog("Ingrese la nueva capital del país");
+            p1=p1+",capital='"+cap+"'";
+            cont++;
+        }
+        yaesta=false;
+        if(this.jCheckBox17.isSelected() && cont==0){
+            cod2=JOptionPane.showInputDialog("Ingrese el nuevo código 2 del país");
+            p1=p1+"code2='"+cod2+"'";
+            cont++;
+            yaesta=true;
+        }
+        if(this.jCheckBox17.isSelected() && cont!=0 && yaesta==false){
+            cod2=JOptionPane.showInputDialog("Ingrese el nuevo código 2 del país");
+            p1=p1+",code2='"+cod2+"'";
+            cont++;
+        }     
+        
+        p3="name='"+pais+"'";
+        opc="update country set "+p1+" where "+p3+";";
+        
+        try {
+            Statement st = Interfaz.con.createStatement();
+            int rs = st.executeUpdate(opc);
+            JOptionPane.showMessageDialog(null,"El país fue modificado exitosamente!!");
+
+        }
+        catch (SQLException ex) {
+            Logger.getLogger(InterfazCRUD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    private void modificarCiudad(){
+        String pais,id,nom,ccode,dis,pobla,p1="",p3,opc="";
+        int cont=0;
+        boolean yaesta=false;
+            
+        pais=JOptionPane.showInputDialog("Ingrese el nombre de la ciudad a modificar");
+        
+        if(this.jCheckBox4.isSelected() && cont==0){
+            id=JOptionPane.showInputDialog("Ingrese el ID de la ciudad");
+            p1=p1+"id='"+id+"'";
+            cont++;
+        }
+        if(this.jCheckBox5.isSelected() && cont==0){
+            nom=JOptionPane.showInputDialog("Ingrese el nombre de la ciudad");
+            p1=p1+"name='"+nom+"'";
+            cont++;
+            yaesta=true;
+        }
+        if(this.jCheckBox5.isSelected() && cont!=0 && yaesta==false){
+            nom=JOptionPane.showInputDialog("Ingrese el nombre de la ciudad");
+            p1=p1+",name='"+nom+"'";
+            cont++;
+        }
+        yaesta=false;
+        if(this.jCheckBox6.isSelected() && cont==0){
+            ccode=JOptionPane.showInputDialog("Ingrese el codigo del país de la ciudad");
+            p1=p1+"countrycode='"+ccode+"'";
+            cont++;
+            yaesta=true;
+        }
+        if(this.jCheckBox6.isSelected() && cont!=0 && yaesta==false){
+            ccode=JOptionPane.showInputDialog("Ingrese el codigo del país de la ciudad");
+            p1=p1+",countrycode='"+ccode+"'";
+            cont++;
+        }
+        yaesta=false;
+        if(this.jCheckBox7.isSelected() && cont==0){
+            dis=JOptionPane.showInputDialog("Ingrese el distrito de la ciudad");
+            p1=p1+"district='"+dis+"'";
+            cont++;
+            yaesta=true;
+        }
+        if(this.jCheckBox7.isSelected() && cont!=0 && yaesta==false){
+            dis=JOptionPane.showInputDialog("Ingrese el distrito de la ciudad");
+            p1=p1+",district='"+dis+"'";
+            cont++;
+        }
+        yaesta=false;
+        if(this.jCheckBox8.isSelected() && cont==0){
+            pobla=JOptionPane.showInputDialog("Ingrese la población de la ciudad");
+            p1=p1+"population='"+pobla+"'";
+            cont++;
+            yaesta=true;
+        }
+        if(this.jCheckBox8.isSelected() && cont!=0 && yaesta==false){
+            pobla=JOptionPane.showInputDialog("Ingrese la población de la ciudad");
+            p1=p1+",population='"+pobla+"'";
+            cont++;
+        }
+        
+        p3="name='"+pais+"'";
+        opc="update city set "+p1+" where "+p3+";";
+        
+        try {
+            Statement st = Interfaz.con.createStatement();
+            int rs = st.executeUpdate(opc);
+            JOptionPane.showMessageDialog(null,"La ciudad fue modificada exitosamente!!");
+
+        }
+        catch (SQLException ex) {
+            Logger.getLogger(InterfazCRUD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    private void modificarIdioma(){
+        String pais,ccode,lan,offi,perc,p1="",p3,opc="";
+        int cont=0;
+        boolean yaesta=false;
+            
+        pais=JOptionPane.showInputDialog("Ingrese el nombre del idioma a modificar");
+        
+        if(this.jCheckBox4.isSelected() && cont==0){
+            ccode=JOptionPane.showInputDialog("Ingrese el nuevo código de país del idioma");
+            p1=p1+"countrycode='"+ccode+"'";
+            cont++;
+        }
+        if(this.jCheckBox5.isSelected() && cont==0){
+            lan=JOptionPane.showInputDialog("Ingrese el nuevo nombre del idioma");
+            p1=p1+"language='"+lan+"'";
+            cont++;
+            yaesta=true;
+        }
+        if(this.jCheckBox5.isSelected() && cont!=0 && yaesta==false){
+            lan=JOptionPane.showInputDialog("Ingrese el nuevo nombre del idioma");
+            p1=p1+",language='"+lan+"'";
+            cont++;
+        }
+        yaesta=false;
+        if(this.jCheckBox6.isSelected() && cont==0){
+            offi=JOptionPane.showInputDialog("Ingrese el nuevo T o F si el idioma es oficial o no");
+            p1=p1+"isofficial='"+offi+"'";
+            cont++;
+            yaesta=true;
+        }
+        if(this.jCheckBox6.isSelected() && cont!=0 && yaesta==false){
+            offi=JOptionPane.showInputDialog("Ingrese el nuevo T o F si el idioma es oficial o no");
+            p1=p1+",isofficial='"+offi+"'";
+            cont++;
+        }
+        yaesta=false;
+        if(this.jCheckBox7.isSelected() && cont==0){
+            perc=JOptionPane.showInputDialog("Ingrese el nuevo porcentaje de quienes hablan el idioma");
+            p1=p1+"percentage='"+perc+"'";
+            cont++;
+            yaesta=true;
+        }
+        if(this.jCheckBox7.isSelected() && cont!=0 && yaesta==false){
+            perc=JOptionPane.showInputDialog("Ingrese el nuevo porcentaje de quienes hablan el idioma");
+            p1=p1+",percentage='"+perc+"'";
+            cont++;
+        }
+        
+        p3="language='"+pais+"'";
+        opc="update countrylanguage set "+p1+" where "+p3+";";
+        
+        try {
+            Statement st = Interfaz.con.createStatement();
+            int rs = st.executeUpdate(opc);
+            JOptionPane.showMessageDialog(null,"El idioma fue modificado exitosamente!!");
+
+        }
+        catch (SQLException ex) {
+            Logger.getLogger(InterfazCRUD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void crearPais(){
+        String cod,nom,conti,reg,sup,indep,pobla,esp,gnp,gnpo,nomloc,gob,cabe,cap,cod2,p1="",opc="";
+        
+        cod=JOptionPane.showInputDialog("Ingrese el código del nuevo país");
+        nom=JOptionPane.showInputDialog("Ingrese el nombre del nuevo país");
+        conti=JOptionPane.showInputDialog("Ingrese el continente del nuevo país");
+        reg=JOptionPane.showInputDialog("Ingrese la región del nuevo país");
+        sup=JOptionPane.showInputDialog("Ingrese la superficie del nuevo país");
+        indep=JOptionPane.showInputDialog("Ingrese el año de independencia del nuevo país");
+        pobla=JOptionPane.showInputDialog("Ingrese la población del nuevo país");
+        esp=JOptionPane.showInputDialog("Ingrese la esperanza de vida del nuevo país");
+        gnp=JOptionPane.showInputDialog("Ingrese el GNP del nuevo país");
+        gnpo=JOptionPane.showInputDialog("Ingrese el GNPOld del nuevo país");
+        nomloc=JOptionPane.showInputDialog("Ingrese el nombre local del nuevo país");
+        gob=JOptionPane.showInputDialog("Ingrese el tipo de gobierno del nuevo país");
+        cabe=JOptionPane.showInputDialog("Ingrese la cabeza de estado del nuevo país");
+        cap=JOptionPane.showInputDialog("Ingrese la capital del nuevo país");
+        cod2=JOptionPane.showInputDialog("Ingrese el código 2 del nuevo país");
+        
+        p1="'"+cod+"','"+nom+"','"+conti+"','"+reg+"','"+sup+"','"+indep+"','"+pobla+"','"+esp+"','"+gnp+"','"+gnpo+"','"+nomloc+"','"+gob+"','"+cabe+"','"+cap+"','"+cod2+"'";
+        opc="insert into country values ("+p1+");";
+        
+        try {
+            Statement st = Interfaz.con.createStatement();
+            int rs = st.executeUpdate(opc);
+            JOptionPane.showMessageDialog(null,"El país fue creado exitosamente!!");
+
+        }
+        catch (SQLException ex) {
+            Logger.getLogger(InterfazCRUD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void crearCiudad(){
+        String id,nom,ccode,dis,pobla,p1="",opc="";
+        
+        id=JOptionPane.showInputDialog("Ingrese el ID de la nueva ciudad");
+        nom=JOptionPane.showInputDialog("Ingrese el nombre de la nueva ciudad");
+        ccode=JOptionPane.showInputDialog("Ingrese el codigo del país de la nueva ciudad");
+        dis=JOptionPane.showInputDialog("Ingrese el distrito de la nueva ciudad");
+        pobla=JOptionPane.showInputDialog("Ingrese la población de la nueva ciudad");
+        
+        p1="'"+id+"','"+nom+"','"+ccode+"','"+dis+"','"+pobla+"'";
+        opc="insert into city values ("+p1+");";
+        
+        try {
+            Statement st = Interfaz.con.createStatement();
+            int rs = st.executeUpdate(opc);
+            JOptionPane.showMessageDialog(null,"La ciudad fue creada exitosamente!!");
+
+        }
+        catch (SQLException ex) {
+            Logger.getLogger(InterfazCRUD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void crearIdioma(){
+        String ccode,lan,offi,perc,p1="",opc="";
+        
+        ccode=JOptionPane.showInputDialog("Ingrese el código del país del nuevo idioma");
+        lan=JOptionPane.showInputDialog("Ingrese el nombre del idioma del nuevo idioma");
+        offi=JOptionPane.showInputDialog("Ingrese T o F si el oficial el nuevo idioma");
+        perc=JOptionPane.showInputDialog("Ingrese el porcentaje de quienes hablan el nuevo idioma");
+        
+        p1="'"+ccode+"','"+lan+"','"+offi+"','"+perc+"'";
+        opc="insert into countrylanguage values ("+p1+");";
+        System.out.print(opc);
+        
+        try {
+            Statement st = Interfaz.con.createStatement();
+            int rs = st.executeUpdate(opc);
+            JOptionPane.showMessageDialog(null,"El idioma fue creado exitosamente!!");
+
+        }
+        catch (SQLException ex) {
+            Logger.getLogger(InterfazCRUD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void eliminarPais(){
+        String pais,p3,opc;
+        
+        pais=JOptionPane.showInputDialog("Ingrese el nombre del país a eliminar");
+        p3="name='"+pais+"'";
+        
+        opc="delete from country where "+p3+";";
+        
+        try {
+            Statement st = Interfaz.con.createStatement();
+            int rs = st.executeUpdate(opc);
+            JOptionPane.showMessageDialog(null,"El país fue eliminado exitosamente!!");
+
+        }
+        catch (SQLException ex) {
+            Logger.getLogger(InterfazCRUD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void eliminarCiudad(){
+        String pais,p3,opc;
+        
+        pais=JOptionPane.showInputDialog("Ingrese el nombre de la ciudad a eliminar");
+        p3="name='"+pais+"'";
+        
+        opc="delete from city where "+p3+";";
+        
+        try {
+            Statement st = Interfaz.con.createStatement();
+            int rs = st.executeUpdate(opc);
+            JOptionPane.showMessageDialog(null,"La ciudad fue eliminada exitosamente!!");
+
+        }
+        catch (SQLException ex) {
+            Logger.getLogger(InterfazCRUD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void eliminarIdioma(){
+        String pais,p3,opc;
+        
+        pais=JOptionPane.showInputDialog("Ingrese el nombre del idioma a eliminar");
+        p3="language='"+pais+"'";
+        
+        opc="delete from countrylanguage where "+p3+";";
+        
+        try {
+            Statement st = Interfaz.con.createStatement();
+            int rs = st.executeUpdate(opc);
+            JOptionPane.showMessageDialog(null,"El idioma fue eliminado exitosamente!!");
 
         }
         catch (SQLException ex) {

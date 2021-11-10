@@ -313,53 +313,37 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
-                        .addGap(60, 60, 60)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 428, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addGap(60, 60, 60)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(234, 234, 234))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(70, 70, 70)
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(70, 70, 70)
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(70, 70, 70)
+                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel2)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 620, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(70, 70, 70)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(70, 70, 70)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(70, 70, 70)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel1)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 796, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel3)
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel6))
-                .addGap(0, 0, 0)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(54, 54, 54))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel6))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                         .addComponent(jRadioButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jRadioButton2)
@@ -374,10 +358,18 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jCheckBox5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jCheckBox7))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCheckBox6)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jCheckBox8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jCheckBox9)
@@ -385,7 +377,7 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
                         .addComponent(jCheckBox10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jCheckBox1)
-                        .addGap(1, 1, 1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jCheckBox11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jCheckBox12)
@@ -398,8 +390,18 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jCheckBox16)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox17)
-                        .addGap(147, 147, 147))))
+                        .addComponent(jCheckBox17))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addGap(85, 85, 85)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(54, 54, 54))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1409,7 +1411,7 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
         try {
             Statement st = Interfaz.con.createStatement();
             int rs = st.executeUpdate(opc);
-            JOptionPane.showMessageDialog(null,"El país fue modificado exitosamente!!");
+            JOptionPane.showMessageDialog(null,"¡El país fue modificado exitosamente!");
 
         }
         catch (SQLException ex) {
@@ -1425,24 +1427,24 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
         pais=JOptionPane.showInputDialog("Ingrese el nombre de la ciudad a modificar");
         
         if(this.jCheckBox4.isSelected() && cont==0){
-            id=JOptionPane.showInputDialog("Ingrese el ID de la ciudad");
+            id=JOptionPane.showInputDialog("Ingrese el nuevo ID de la ciudad");
             p1=p1+"id='"+id+"'";
             cont++;
         }
         if(this.jCheckBox5.isSelected() && cont==0){
-            nom=JOptionPane.showInputDialog("Ingrese el nombre de la ciudad");
+            nom=JOptionPane.showInputDialog("Ingrese el nombre de la nueva ciudad");
             p1=p1+"name='"+nom+"'";
             cont++;
             yaesta=true;
         }
         if(this.jCheckBox5.isSelected() && cont!=0 && yaesta==false){
-            nom=JOptionPane.showInputDialog("Ingrese el nombre de la ciudad");
+            nom=JOptionPane.showInputDialog("Ingrese el nombre de la nueva ciudad");
             p1=p1+",name='"+nom+"'";
             cont++;
         }
         yaesta=false;
         if(this.jCheckBox6.isSelected() && cont==0){
-            ccode=JOptionPane.showInputDialog("Ingrese el codigo del país de la ciudad");
+            ccode=JOptionPane.showInputDialog("Ingrese el nuevo codigo del país de la ciudad");
             p1=p1+"countrycode='"+ccode+"'";
             cont++;
             yaesta=true;
@@ -1483,7 +1485,7 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
         try {
             Statement st = Interfaz.con.createStatement();
             int rs = st.executeUpdate(opc);
-            JOptionPane.showMessageDialog(null,"La ciudad fue modificada exitosamente!!");
+            JOptionPane.showMessageDialog(null,"¡La ciudad fue modificada exitosamente!");
 
         }
         catch (SQLException ex) {
@@ -1499,7 +1501,7 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
         pais=JOptionPane.showInputDialog("Ingrese el nombre del idioma a modificar");
         
         if(this.jCheckBox4.isSelected() && cont==0){
-            ccode=JOptionPane.showInputDialog("Ingrese el nuevo código de país del idioma");
+            ccode=JOptionPane.showInputDialog("Ingrese el nombre de país del idioma a cambiar");
             p1=p1+"countrycode='"+ccode+"'";
             cont++;
         }
@@ -1516,7 +1518,7 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
         }
         yaesta=false;
         if(this.jCheckBox6.isSelected() && cont==0){
-            offi=JOptionPane.showInputDialog("Ingrese el nuevo T o F si el idioma es oficial o no");
+            offi=JOptionPane.showInputDialog("Ingrese T o F si el idioma es oficial o no");
             p1=p1+"isofficial='"+offi+"'";
             cont++;
             yaesta=true;
@@ -1545,7 +1547,7 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
         try {
             Statement st = Interfaz.con.createStatement();
             int rs = st.executeUpdate(opc);
-            JOptionPane.showMessageDialog(null,"El idioma fue modificado exitosamente!!");
+            JOptionPane.showMessageDialog(null,"¡El idioma fue modificado exitosamente!");
 
         }
         catch (SQLException ex) {
@@ -1556,9 +1558,9 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
     public void crearPais(){
         String cod,nom,conti,reg,sup,indep,pobla,esp,gnp,gnpo,nomloc,gob,cabe,cap,cod2,p1="",opc="";
         
-        cod=JOptionPane.showInputDialog("Ingrese el código del nuevo país");
+        cod=JOptionPane.showInputDialog("Ingrese el código del nuevo país (Escriba 3 letras mayúsculas)");
         nom=JOptionPane.showInputDialog("Ingrese el nombre del nuevo país");
-        conti=JOptionPane.showInputDialog("Ingrese el continente del nuevo país");
+        conti=JOptionPane.showInputDialog("Ingrese el continente del nuevo país (Escriba uno de los siguientes 'Asia','Europe','North America','Africa','Oceania','Antarctica','South America')");
         reg=JOptionPane.showInputDialog("Ingrese la región del nuevo país");
         sup=JOptionPane.showInputDialog("Ingrese la superficie del nuevo país");
         indep=JOptionPane.showInputDialog("Ingrese el año de independencia del nuevo país");
@@ -1570,7 +1572,7 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
         gob=JOptionPane.showInputDialog("Ingrese el tipo de gobierno del nuevo país");
         cabe=JOptionPane.showInputDialog("Ingrese la cabeza de estado del nuevo país");
         cap=JOptionPane.showInputDialog("Ingrese la capital del nuevo país");
-        cod2=JOptionPane.showInputDialog("Ingrese el código 2 del nuevo país");
+        cod2=JOptionPane.showInputDialog("Ingrese el código 2 del nuevo país (Escriba dos letras mayúsculas)");
         
         p1="'"+cod+"','"+nom+"','"+conti+"','"+reg+"','"+sup+"','"+indep+"','"+pobla+"','"+esp+"','"+gnp+"','"+gnpo+"','"+nomloc+"','"+gob+"','"+cabe+"','"+cap+"','"+cod2+"'";
         opc="insert into country values ("+p1+");";
@@ -1578,7 +1580,7 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
         try {
             Statement st = Interfaz.con.createStatement();
             int rs = st.executeUpdate(opc);
-            JOptionPane.showMessageDialog(null,"El país fue creado exitosamente!!");
+            JOptionPane.showMessageDialog(null,"¡El país fue creado exitosamente!");
 
         }
         catch (SQLException ex) {
@@ -1589,9 +1591,9 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
     public void crearCiudad(){
         String id,nom,ccode,dis,pobla,p1="",opc="";
         
-        id=JOptionPane.showInputDialog("Ingrese el ID de la nueva ciudad");
+        id=JOptionPane.showInputDialog("Ingrese el ID de la nueva ciudad (A partir del número 4079)");
         nom=JOptionPane.showInputDialog("Ingrese el nombre de la nueva ciudad");
-        ccode=JOptionPane.showInputDialog("Ingrese el codigo del país de la nueva ciudad");
+        ccode=JOptionPane.showInputDialog("Ingrese el código del país de la nueva ciudad");
         dis=JOptionPane.showInputDialog("Ingrese el distrito de la nueva ciudad");
         pobla=JOptionPane.showInputDialog("Ingrese la población de la nueva ciudad");
         
@@ -1601,7 +1603,7 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
         try {
             Statement st = Interfaz.con.createStatement();
             int rs = st.executeUpdate(opc);
-            JOptionPane.showMessageDialog(null,"La ciudad fue creada exitosamente!!");
+            JOptionPane.showMessageDialog(null,"¡La ciudad fue creada exitosamente!");
 
         }
         catch (SQLException ex) {
@@ -1624,7 +1626,7 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
         try {
             Statement st = Interfaz.con.createStatement();
             int rs = st.executeUpdate(opc);
-            JOptionPane.showMessageDialog(null,"El idioma fue creado exitosamente!!");
+            JOptionPane.showMessageDialog(null,"¡El idioma fue creado exitosamente!");
 
         }
         catch (SQLException ex) {
@@ -1643,7 +1645,7 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
         try {
             Statement st = Interfaz.con.createStatement();
             int rs = st.executeUpdate(opc);
-            JOptionPane.showMessageDialog(null,"El país fue eliminado exitosamente!!");
+            JOptionPane.showMessageDialog(null,"¡El país fue eliminado exitosamente!");
 
         }
         catch (SQLException ex) {
@@ -1662,7 +1664,7 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
         try {
             Statement st = Interfaz.con.createStatement();
             int rs = st.executeUpdate(opc);
-            JOptionPane.showMessageDialog(null,"La ciudad fue eliminada exitosamente!!");
+            JOptionPane.showMessageDialog(null,"¡La ciudad fue eliminada exitosamente!");
 
         }
         catch (SQLException ex) {
@@ -1681,7 +1683,7 @@ public class InterfazCRUD extends javax.swing.JFrame implements ActionListener
         try {
             Statement st = Interfaz.con.createStatement();
             int rs = st.executeUpdate(opc);
-            JOptionPane.showMessageDialog(null,"El idioma fue eliminado exitosamente!!");
+            JOptionPane.showMessageDialog(null,"¡El idioma fue eliminado exitosamente!");
 
         }
         catch (SQLException ex) {
